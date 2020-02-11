@@ -1,0 +1,39 @@
+// Sidebar dark
+
+.app-sidebar {
+  &--dark {
+    .app-sidebar--header {
+      background: transparent;
+
+      .collapse-sidebar-btn {
+        background: transparent;
+        color: rgba($white, .8);
+        opacity: 1;
+
+        &:hover {
+          background: rgba($black, .2);
+          color: $white;
+        }
+      }
+      &:after {
+        background: rgba($white, .15);
+      }
+
+      .nav-logo {
+        a {
+          color: $white;
+
+          i {
+            background: $white;
+          }
+        }
+      }
+    }
+
+    .hamburger-inner,
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+      background: $white !important;
+    }
+  }
+}

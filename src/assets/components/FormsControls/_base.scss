@@ -1,0 +1,79 @@
+//  Core
+
+.input-group-seamless {
+  .input-group-text {
+    background: transparent;
+    border-color: transparent;
+    padding: 0 !important;
+    width: 100%;
+    text-align: center;
+
+    i {
+      margin: 0 auto;
+      opacity: .6;
+    }
+  }
+
+  .form-control {
+    @include border-radius($input-border-radius !important);
+  }
+
+  .input-group-append {
+    position: absolute;
+    right: 0;
+  }
+
+  .input-group-append,
+  .input-group-prepend {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 40px;
+    padding: 0 !important;
+    z-index: 4;
+  }
+
+  .input-group-prepend {
+    left: 0;
+
+    & + .form-control {
+      padding-left: calc(18px + #{$input-padding-x});
+    }
+  }
+
+  &.input-group-sm {
+    .input-group-prepend {
+      width: 30px;
+
+      & + .form-control {
+        padding-left: calc(10px + #{$input-padding-x-sm});
+        @include border-radius($input-border-radius-sm);
+      }
+    }
+  }
+
+  &.input-group-lg {
+    .input-group-prepend {
+      width: 50px;
+
+      & + .form-control {
+        padding-left: calc(20px + #{$input-padding-x-lg});
+        @include border-radius($input-border-radius-lg);
+      }
+    }
+  }
+}
+
+// Fix Bootstrap validation icon position
+
+.form-control.is-valid,
+.was-validated .form-control:valid,
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  @if $enable-validation-icons {
+    background-position: 98% $input-height-inner-quarter !important;
+  }
+}
+

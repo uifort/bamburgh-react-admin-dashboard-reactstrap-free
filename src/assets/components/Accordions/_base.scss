@@ -1,0 +1,61 @@
+//  Core
+
+.accordion {
+  & > .card-box {
+    & > .card {
+      box-shadow: none !important;
+
+      & > .card-header {
+        padding: 0;
+        border-bottom: 0;
+
+        & > .panel-title .accordion-toggle,
+        & > .panel-title {
+          width: 100%;
+        }
+
+        .btn {
+          display: block;
+          width: 100%;
+          text-align: left;
+          border-bottom: transparent solid 1px;
+          background: $gray-200;
+
+          &:hover {
+            background: $gray-100;
+            color: $black;
+          }
+
+          &:not(:disabled):hover {
+            transform: translateY(0px);
+          }
+
+          .accordion-icon {
+            transform: rotate(90deg);
+            transition: $transition-base;
+          }
+        }
+      }
+
+      .panel-body {
+        padding: 0;
+      }
+    }
+
+    &.panel-open {
+      & > .card {
+        & > .card-header {
+
+          .btn {
+            border-bottom-color: $card-border-color;
+            background: $card-bg;
+
+            .accordion-icon {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
